@@ -1,0 +1,72 @@
+// formalisme tableau
+#include <iostream>
+using namespace std;
+
+int main() {
+    int tab[10];
+    
+    // Lecture des 10 nombres entiers dans le tableau
+    for (int i = 0; i < 10; i++) {
+        cout << "Entrez un nombre entier : ";
+        cin >> tab[i];
+    }
+
+    // Initialisation du minimum et du maximum avec la première valeur du tableau
+    int min = tab[0];
+    int max = tab[0];
+
+    // Recherche du minimum et du maximum
+    for (int i = 1; i < 10; i++) {
+        if (tab[i] < min) {
+            min = tab[i];
+        }
+        if (tab[i] > max) {
+            max = tab[i];
+        }
+    }
+
+    // Affichage des résultats
+    cout << "Le plus petit nombre est : " << min << endl;
+    cout << "Le plus grand nombre est : " << max << endl;
+
+    return 0;
+}
+ formalisme pointeur
+ #include <iostream>
+using namespace std;
+
+ int main() {
+    int tab[10];
+    int* ptr = tab;  // Pointeur pointant vers le début du tableau
+
+    // Lecture des 10 nombres entiers dans le tableau à l'aide du pointeur
+    for (int i = 0; i < 10; i++) {
+        cout << "Entrez un nombre entier : ";
+        cin >> *ptr;  // Utilisation du pointeur pour accéder à la case mémoire
+        ptr++;  // Déplacement du pointeur vers la prochaine case mémoire
+    }
+
+    // Réinitialisation du pointeur au début du tableau
+    ptr = tab;
+
+    // Initialisation du minimum et du maximum avec la première valeur du tableau
+    int min = *ptr;
+    int max = *ptr;
+
+    // Recherche du minimum et du maximum en utilisant le pointeur
+    for (int i = 1; i < 10; i++) {
+        ptr++;  // Déplacement du pointeur vers la prochaine case mémoire
+        if (*ptr < min) {
+            min = *ptr;
+        }
+        if (*ptr > max) {
+            max = *ptr;
+        }
+    }
+
+    // Affichage des résultats
+    cout << "Le plus petit nombre est : " << min << endl;
+    cout << "Le plus grand nombre est : " << max << endl;
+
+    return 0;
+}
