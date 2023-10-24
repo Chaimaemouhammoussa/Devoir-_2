@@ -1,0 +1,50 @@
+#include <iostream>
+#include <cstdlib>
+
+class Fichier {
+private:
+    char* P; 
+    int longueur; 
+
+public:
+    Fichier(int taille) {
+        longueur = taille;
+        P = new char[taille]; 
+    }
+
+    ~Fichier() {
+        delete[] P; 
+
+    void Creation() {
+        std::cout << "Espace mémoire alloué." << std::endl;
+    }
+
+    void Remplit() {
+        for (int i = 0; i < longueur; i++) {
+            P[i] = rand() % 256; 
+        }
+        std::cout << "Espace mémoire rempli arbitrairement." << std::endl;
+    }
+
+    void Affiche() {
+        std::cout << "Contenu de l'espace mémoire : ";
+        for (int i = 0; i < longueur; i++) {
+            std::cout << static_cast<int>(P[i]) << " ";
+        }
+        std::cout << std::endl;
+    }
+};
+
+int main() {
+    int tailleFichier = 10; // Taille du fichier en octets
+
+    Fichier* fichier = new Fichier(tailleFichier); // Instancie la classe par new
+
+    fichier->Creation();
+    fichier->Remplit();
+    fichier->Affiche();
+
+    delete fichier; // Supprime l'objet avec delete
+
+    return 0;
+}
