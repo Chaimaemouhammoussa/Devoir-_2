@@ -1,0 +1,31 @@
+#include<iostream>
+using namespace std ;
+int multiple2(int a)
+{
+  if(a%2==0)
+    cout<<"le nombre est multiple de 2"<<endl;
+  else
+    cout<<"le nombre est pas multiple de deux"<<endl;
+  return a;
+  }
+  int multiple3(int b)
+{
+  if(b%3==0)
+    cout<<"le nombre est multiple de 3"<<endl;
+  else
+    cout<<"le nombre est pas multiple de 3"<<endl;
+  return b;
+
+
+}
+int main()
+{
+    int a,b;
+    cout<<"entre la valeur de a"<<endl;
+    cin>>a;
+    multiple2(a);
+    multiple3(b);
+    if(a%2==0 && a%3==0)
+    cout<<"ce nombre est multiple de 6"<<endl;
+return 0;
+}
