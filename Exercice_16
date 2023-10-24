@@ -1,0 +1,20 @@
+#include <iostream>
+#include <string>
+
+int main() {
+    // Chaîne de caractères représentant la date et l'heure
+    std::string dateHeure = "010920091123";
+
+    // Extraction des champs
+    std::string jour = dateHeure.substr(0, 2);
+    std::string mois = dateHeure.substr(2, 2);
+    std::string annee = dateHeure.substr(4, 4);
+    std::string heure = dateHeure.substr(8, 2);
+    std::string minute = dateHeure.substr(10, 2);
+
+    // Affichage des champs
+    std::cout << "Date : " << jour << "/" << mois << "/" << annee << std::endl;
+    std::cout << "Heure : " << heure << ":" << minute << std::endl;
+
+    return 0;
+}
